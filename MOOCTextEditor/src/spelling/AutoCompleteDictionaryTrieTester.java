@@ -34,14 +34,19 @@ public class AutoCompleteDictionaryTrieTester {
 		largeDict = new AutoCompleteDictionaryTrie();
 
 		smallDict.addWord("Hello");
+		//System.out.println(smallDict.size());
 		smallDict.addWord("HElLo");
+		//System.out.println(smallDict.size());
 		smallDict.addWord("help");
+		//System.out.println(smallDict.size());
 		smallDict.addWord("he");
+		//System.out.println(smallDict.size());
 		smallDict.addWord("hem");
 		smallDict.addWord("hot");
 		smallDict.addWord("hey");
 		smallDict.addWord("a");
 		smallDict.addWord("subsequent");
+		//System.out.println(smallDict.size());
 		
 		DictionaryLoader.loadDictionary(largeDict, dictFile);
 	}
@@ -52,6 +57,7 @@ public class AutoCompleteDictionaryTrieTester {
 	@Test
 	public void testSize()
 	{
+		System.out.println(emptyDict.size());
 		assertEquals("Testing size for empty dict", 0, emptyDict.size());
 		assertEquals("Testing size for small dict", 8, smallDict.size());
 		assertEquals("Testing size for large dict", 4438, largeDict.size());
