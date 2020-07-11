@@ -40,7 +40,11 @@ public class AutoCompleteDictionaryTrie implements  Dictionary, AutoComplete {
 	 * @return true if the word was successfully added or false if it already exists
 	 * in the dictionary.
 	 */
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> e349e50eadc950291905c9e694fee9b7360b110c
     public boolean addWord(String word)
 	{
 	    //TODO: Implement this method.
