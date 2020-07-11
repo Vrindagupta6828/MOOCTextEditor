@@ -40,46 +40,7 @@ public class AutoCompleteDictionaryTrie implements  Dictionary, AutoComplete {
 	 * @return true if the word was successfully added or false if it already exists
 	 * in the dictionary.
 	 */
- /*   public boolean addWord(String word){
-        String wordToAdd = word.toLowerCase();
-        TrieNode node = root;
-        for (int i = 0; i < wordToAdd.length(); i++) {
-            char c = wordToAdd.charAt(i);
-            if (node.getValidNextCharacters().contains(c)) {
-                node = node.getChild(c);
-            } else {
-                node = node.insert(c);
-            }
-        }
-        if (!node.endsWord()) {
-            node.setEndsWord(true);
-            size++;
-            return true;
-        }
-        return false;
-}
 
-
-public int size(){
-    return size;
-}
-
-public boolean isWord(String s){
-    String sLowerCase = s.toLowerCase();
-    TrieNode node = root;
-    for(int i = 0; i < sLowerCase.length(); i++){
-        char c = sLowerCase.charAt(i);
-        if(node.getValidNextCharacters().contains(c)) {
-            node = node.getChild(c);
-        }
-        else 
-            return false;
-      
-    }
-    if(node.endsWord()) return true;
-    
-    return false;
-}*/
     public boolean addWord(String word)
 	{
 	    //TODO: Implement this method.

@@ -77,6 +77,21 @@ public class NearbyWords implements SpellingSuggest {
 	 */
 	public void insertions(String s, List<String> currentList, boolean wordsOnly ) {
 		// TODO: Implement this method  
+		for(int index = 0; index <=s.length(); index++){
+			for(int charCode = (int)'a'; charCode <= (int)'z'; charCode++) {
+				// use StringBuffer for an easy interface to permuting the 
+				// letters in the String
+				StringBuffer sb = new StringBuffer(s);
+				sb.insert(index, (char)charCode);
+				// if the item isn't in the list, isn't the original string, and
+				// (if wordsOnly is true) is a real word, add to the list
+				if(!currentList.contains(sb.toString()) && 
+						(!wordsOnly||dict.isWord(sb.toString())) &&
+						!s.equals(sb.toString())) {
+					currentList.add(sb.toString());
+				}
+			}
+	}
 	}
 
 	/** Add to the currentList Strings that are one character deletion away
@@ -88,6 +103,20 @@ public class NearbyWords implements SpellingSuggest {
 	 */
 	public void deletions(String s, List<String> currentList, boolean wordsOnly ) {
 		// TODO: Implement this method
+		for(int index = 0; index < s.length(); index++){
+				// use StringBuffer for an easy interface to permuting the 
+				// letters in the String
+				StringBuffer sb = new StringBuffer(s);
+				sb.delete(index,index+1);
+
+				// if the item isn't in the list, isn't the original string, and
+				// (if wordsOnly is true) is a real word, add to the list
+				if(!currentList.contains(sb.toString()) && 
+						(!wordsOnly||dict.isWord(sb.toString())) &&
+						!s.equals(sb.toString())) {
+					currentList.add(sb.toString());
+				}
+			}
 	}
 
 	/** Add to the currentList Strings that are one character deletion away
@@ -111,13 +140,26 @@ public class NearbyWords implements SpellingSuggest {
 		visited.add(word);
 					
 		// TODO: Implement the remainder of this method, see assignment for algorithm
-		
+		int z=0,no=0;
+		while ((!(queue.isEmpty())) && z<numSuggestions && no<THRESHOLD)
+		{ String curr=queue.get(0);
+		  queue.remove(0);
+		 List<String> l = distanceOne(curr, true);
+		 for (String n:l) {
+			 no+=1;
+			 if (!(visited.contains(n)) && z<numSuggestions)
+				 {visited.add(n);
+			     queue.add(n);
+			     if (dict.isWord(n))
+			       {retList.add(n);
+			       z+=1;}
+				 }
+		 }}		
 		return retList;
-
-	}	
+}	
 
    public static void main(String[] args) {
-	   /* basic testing code to get started
+	   /*// basic testing code to get started
 	   String word = "i";
 	   // Pass NearbyWords any Dictionary implementation you prefer
 	   Dictionary d = new DictionaryHashSet();
