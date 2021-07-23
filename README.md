@@ -5,5 +5,7 @@ This is my data structure project which is from an e-learning website in java.I 
 
 The project include concepts of Strings,Linked List,Balanced binary search tree,tries,asymptotic analysis of which data structure is better and much more.My code is in the src file.
 
+![image](https://user-images.githubusercontent.com/50476758/126756211-61a9cf3d-f5af-4b62-b547-1b456a8e0afc.png)
+
 I have also shown my data in the form of graphs.You can check my implementation on:https://docs.google.com/spreadsheets/d/1-4MHUDlJv2b02nkf-MLR4kVvWXMDExAwJG6vTt3TMuk/edit#gid=0
 and https://docs.google.com/spreadsheets/d/1QQSo5pMoXop6huFqnkY_HmCDCGIm37zfyZ5TyX3HEtQ/edit#gid=0
